@@ -1,0 +1,17 @@
+{
+  "name": "extract-gmaps-informations",
+  "version": "0.0.1",
+  "description": "Don't get the COVID-19, track places information and get out of home based in data",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node --no-warnings src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Joffily Ferreira <joffily.ferreira@scielo.org>",
+  "license": "MIT",
+  "dependencies": {
+    "csv-writer": "^1.6.0",
+    "puppeteer": "^3.0.1"
+  }
+}
