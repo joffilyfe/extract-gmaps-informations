@@ -5,6 +5,10 @@ Este repositório ajuda a automatizar a busca de informações sobre a aglomera�
 
 :warning: Evite sair de casa
 
+### Instalação e Configuração
+
+Para utilizar esta aplicação **[acesse o link](./docs/README.md)** e siga as instruções.
+
 ### Exemplo de uso
 
 Utilizando a aplicação [Metabase](https://www.metabase.com/) é possível visualizar de forma bastante prática a movimentação de pessoas no decorrer do tempo e comparar quais dias são menos movimentos.
