@@ -1,11 +1,19 @@
 const os = require("os");
 const fs = require('fs');
 const path = require("path");
-const config = require("../config.json");
 const utils = require("./utils.js");
 const puppeteer = require('puppeteer');
 const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-const outputFile = path.join(os.homedir(), ".track-gmaps", "informations.csv");
+
+const rootDir = path.join(os.homedir(), ".track-gmaps");
+const outputFile = path.join(rootDir, "informations.csv");
+
+if (!fs.existsSync(path.join(rootDir, "config.json"))) {
+    console.error(`Please create a config file into ${rootDir}. It may contains places information.`);
+    process.exit(1);
+}
+
+const config = require(path.join(rootDir, "config.json"));
 
 
 if (!fs.existsSync(path.dirname(outputFile))) {
@@ -24,7 +32,7 @@ const csvWriter = createCsvWriter({
 });
 
 (async () => {
-    const browser = await puppeteer.launch({ ignoreHTTPSErrors: true });
+    const browser = await puppeteer.launch({ ignoreHTTPSErrors: true, args: ['--no-sandbox'] });
     const page = await browser.newPage();
     await page.setUserAgent(config.userAgent);
     await page.setViewport({ width: 769, height: 711 });
