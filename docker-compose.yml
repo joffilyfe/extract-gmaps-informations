@@ -1,0 +1,7 @@
+version: '3.1'
+
+services:
+  tracker:
+    image: joffily/extract-gmaps-informations:develop
+    volumes:
+      - ./track-gmaps-data:/root/.track-gmaps

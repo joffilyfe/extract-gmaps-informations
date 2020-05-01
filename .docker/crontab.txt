@@ -1,0 +1,1 @@
+*/5 7-23 * * * sh /app/.docker/start.sh /app >> /var/log/cron.log 2>&1
